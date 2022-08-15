@@ -13,43 +13,43 @@ void ms_delay( unsigned int time);
 
 void main()
 {
-	
-//LCD INITIALIZATION
 
-//2 lines and 5x7 matrix
-send_command(0x38);
+	//LCD INITIALIZATION
 
-//display on cursor blink
-send_command(0x0E);
+	//2 lines and 5x7 matrix
+	send_command(0x38);
 
-//clear display screen
-send_command(0X01);
+	//display on cursor blink
+	send_command(0x0E);
 
-
+	//clear display screen
+	send_command(0X01);
 
 
-//PRINTING A CHARACTER
 
-while(1)
-{
 
-send_command(0x80)	; // force cursor on 1st line		
-send_data('E');
-send_data('M');
-send_data('B');
-send_data('E');
-send_data('D');
-send_data('D');
-send_data('E');
-send_data('D');
-	
-send_command(0xC0)	; // force cursor on 2nd line	
-	
-send_data('L');
-send_data('A');
-send_data('B');	
+	//PRINTING A CHARACTER
 
-}
+	while(1)
+	{
+
+		send_command(0x80)	; // force cursor on 1st line		
+		send_data('E');
+		send_data('M');
+		send_data('B');
+		send_data('E');
+		send_data('D');
+		send_data('D');
+		send_data('E');
+		send_data('D');
+
+		send_command(0xC0)	; // force cursor on 2nd line	
+
+		send_data('L');
+		send_data('A');
+		send_data('B');	
+
+	}
 
 }
 
